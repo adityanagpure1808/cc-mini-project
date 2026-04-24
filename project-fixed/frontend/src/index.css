@@ -1,0 +1,127 @@
+:root {
+  --bg:        #f5f6fa;
+  --card:      #ffffff;
+  --primary:   #4f46e5;
+  --primary-h: #4338ca;
+  --text:      #1e1e2e;
+  --muted:     #6b7280;
+  --border:    #e5e7eb;
+  --error:     #ef4444;
+  --success:   #22c55e;
+  --radius:    10px;
+  --shadow:    0 4px 24px rgba(0,0,0,0.08);
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ── Form card ───────────────────────────────────── */
+.form-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-card h2 {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* ── Inputs ──────────────────────────────────────── */
+input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 15px;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+input:focus { border-color: var(--primary); }
+
+/* ── Buttons ─────────────────────────────────────── */
+button {
+  padding: 11px 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover:not(:disabled) { background: var(--primary-h); }
+button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  padding: 6px 14px;
+  font-size: 13px;
+}
+.btn-outline:hover { background: var(--primary); color: #fff; }
+
+/* ── Messages ────────────────────────────────────── */
+.error   { color: var(--error);   font-size: 14px; margin: 0; }
+.success { color: var(--success); font-size: 14px; margin: 0; }
+
+.switch-link { font-size: 14px; color: var(--muted); text-align: center; margin: 0; }
+.switch-link a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+/* ── Order page extras ───────────────────────────── */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-list { margin-top: 8px; }
+.order-list h3 { margin: 0 0 10px; font-size: 16px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+th {
+  text-align: left;
+  padding: 8px 10px;
+  background: var(--bg);
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+  color: var(--muted);
+}
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+.order-id { font-family: monospace; color: var(--muted); }
